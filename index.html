@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Física - Termodinâmica</title>
+    <style>
+        :root {
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --primary: #1e3a8a;
+            --ans-bg: #ecfdf5;
+            --ans-border: #059669;
+            --ans-text: #065f46;
+            --res-border: #3b82f6;
+            --res-bg: #f8fafc;
+            --text-main: #1f2937;
+            --text-sub: #4b5563;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 12px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: #ffffff;
+            padding: 20px 16px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.92;
+        }
+
+        .question-card {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .q-number {
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: var(--primary);
+            background-color: #eff6ff;
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        .btn-ans-toggle {
+            background-color: #f3f4f6;
+            border: 1px solid #d1d5db;
+            color: var(--text-sub);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-ans-toggle.active {
+            background-color: #d1fae5;
+            color: #065f46;
+            border-color: #10b981;
+        }
+
+        .gabarito-box {
+            display: none;
+            background-color: var(--ans-bg);
+            border-left: 4px solid var(--ans-border);
+            color: var(--ans-text);
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-bottom: 12px;
+        }
+
+        .q-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 14px;
+            white-space: pre-line;
+            word-wrap: break-word;
+        }
+
+        .btn-res-toggle {
+            width: 100%;
+            background-color: #f9fafb;
+            color: #374151;
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .resolucao-box {
+            display: none;
+            background-color: var(--res-bg);
+            border-left: 4px solid var(--res-border);
+            padding: 12px 14px;
+            margin-top: 8px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: #1e293b;
+            white-space: pre-line;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 8px; }
+            .question-card { padding: 14px; }
+            header h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Exercícios de Física - Termodinâmica</h1>
+    <p>Lista Completa • 40 Questões</p>
+</header>
+
+<div id="questions-container">
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 1</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-1')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-1" class="gabarito-box">
+            Resposta: c
+        </div>
+
+        <div class="q-text">Você já deve ter notado que ao esfregar as mãos durante algum tempo elas ficam mais quentes. Isso ocorre porque:
+
+a) aumenta a circulação do sangue, elevando a produção de calor;
+b) o movimento das mãos pode alterar a temperatura do ambiente, devido ao atrito delas com o ar;
+c) o trabalho mecânico realizado pelas forças de atrito existentes entre as mãos se transforma em energia térmica, aumentando sua temperatura;
+d) durante o movimento, as mãos absorvem energia térmica do ambiente, o que aumenta sua temperatura;
+e) a diferença de polaridade existente entre a mão direita e a mão esquerda provoca um aquecimento em ambas.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-1')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-1" class="resolucao-box">
+                Ao esfregar uma mão contra a outra, a força de atrito realiza trabalho mecânico. Esse trabalho dissipativo é convertido em energia térmica (calor), que por sua vez aumenta a energia interna da pele, elevando a sua temperatura.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 2</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-2')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-2" class="gabarito-box">
+            Resposta: c
+        </div>
+
+        <div class="q-text">A primeira coluna descreve uma transformação sofrida pelo gás; a segunda contém a denominação utilizada para indicar essa transformação.
+
+(A) O gás realiza trabalho e sua energia interna não varia.
+(1) Compressão isotérmica.
+
+(B) O gás tem sua energia interna aumentada e não troca trabalho com o meio externo.
+(2) Compressão adiabática.
+
+(C) O gás não troca calor com o meio externo, mas sua temperatura aumenta.
+(3) Aquecimento isométrico.
+
+(D) O gás recebe trabalho e sua energia interna não varia.
+(4) Expansão isotérmica.
+
+Em qual das alternativas as associações estão corretas?
+a) A–1, B–2, C–3 e D–4.
+b) A–4, B–2, C–1 e D–3.
+c) A–4, B–3, C–2 e D–1.
+d) A–3, B–1, C–4 e D–2.
+e) A–2, B–4, C–1 e D–4.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-2')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-2" class="resolucao-box">
+                • (A) O gás realiza trabalho (expansão) e ΔU = 0 (isotérmica) → Expansão isotérmica (4).
+• (B) ΔU &gt; 0 e W = 0 (isométrica) → Aquecimento isométrico (3).
+• (C) Q = 0 (adiabática) e T aumenta (compressão) → Compressão adiabática (2).
+• (D) O gás recebe trabalho (compressão) e ΔU = 0 (isotérmica) → Compressão isotérmica (1).
+Associação correta: A–4, B–3, C–2 e D–1.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 3</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-3')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-3" class="gabarito-box">
+            Resposta: d
+        </div>
+
+        <div class="q-text">A 1ª Lei da Termodinâmica, aplicada a uma transformação gasosa, se refere à:
+
+a) conservação de massa do gás;
+b) conservação da quantidade de movimento das partículas do gás;
+c) relatividade do movimento de partículas subatômicas, que constituem uma massa de gás;
+d) conservação da energia total;
+e) expansão e contração do binômio espaço-tempo no movimento das partículas do gás.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-3')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-3" class="resolucao-box">
+                A Primeira Lei da Termodinâmica (ΔU = Q - W) nada mais é do que a afirmação do Princípio da Conservação da Energia aplicado a sistemas termodinâmicos.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 4</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-4')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-4" class="gabarito-box">
+            Resposta: 260 J
+        </div>
+
+        <div class="q-text">Um gás perfeito sofre uma expansão, realizando um trabalho igual a 200 J. Sabe-se que, no final dessa transformação, a energia interna do sistema está com 60 J a mais que no início. Qual a quantidade de calor recebida pelo gás?</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-4')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-4" class="resolucao-box">
+                Dados:
+• W = +200 J (trabalho realizado na expansão)
+• ΔU = +60 J (aumento da energia interna)
+
+Pela 1ª Lei da Termodinâmica:
+ΔU = Q - W
+60 = Q - 200
+Q = 60 + 200 = 260 J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 5</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-5')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-5" class="gabarito-box">
+            Resposta: 8 kcal
+        </div>
+
+        <div class="q-text">Uma porção de gás perfeito está confinada por um êmbolo móvel no interior de um cilindro. Ao receber 20 kcal de calor do meio externo, o êmbolo sobe e o gás realiza um trabalho equivalente a 12 kcal. Aplicando a 1ª Lei da Termodinâmica, determine a variação sofrida pela energia interna desse gás.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-5')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-5" class="resolucao-box">
+                Dados:
+• Q = +20 kcal (recebido)
+• W = +12 kcal (realizado pelo gás)
+
+Pela 1ª Lei da Termodinâmica:
+ΔU = Q - W
+ΔU = 20 - 12 = 8 kcal
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 6</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-6')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-6" class="gabarito-box">
+            Resposta: W = 250 J; ΔU = 0 J
+        </div>
+
+        <div class="q-text">Um gás perfeito sofre uma expansão isotérmica ao receber do ambiente 250 J de energia em forma de calor. Qual o trabalho realizado pelo gás e qual sua variação de energia interna?</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-6')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-6" class="resolucao-box">
+                Em uma transformação isotérmica, a temperatura permanece constante (ΔT = 0). Como a energia interna de um gás ideal depende apenas da temperatura:
+• ΔU = 0 J
+
+Pela 1ª Lei da Termodinâmica (ΔU = Q - W):
+0 = 250 - W ⇒ W = 250 J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 7</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-7')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-7" class="gabarito-box">
+            Resposta: Soma = 26
+        </div>
+
+        <div class="q-text">Analise as afirmativas a seguir:
+(01) Um gás somente pode ser aquecido se receber calor.
+(02) Pode-se aquecer um gás realizando-se trabalho sobre ele.
+(04) Para esfriar um gás, devemos necessariamente retirar calor dele.
+(08) Um gás pode receber calor do meio externo e sua temperatura permanecer constante.
+(16) Numa transformação adiabática de um gás, sua temperatura pode diminuir.
+
+Dê como resposta a soma dos números associados às afirmações corretas.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-7')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-7" class="resolucao-box">
+                • (01) Incorreta: Um gás pode ser aquecido por compressão adiabática (trabalho realizado sobre ele com Q = 0).
+• (02) Correta: Realizar trabalho sobre o gás (compressão) reduz o volume e aumenta a energia interna e a temperatura.
+• (04) Incorreta: Um gás pode esfriar realizando trabalho em uma expansão adiabática.
+• (08) Correta: Numa expansão isotérmica, o gás recebe calor e o converte integralmente em trabalho, mantendo T constante.
+• (16) Correta: Numa expansão adiabática (Q = 0), o trabalho é positivo, logo ΔU &lt; 0 e a temperatura diminui.
+
+Soma das corretas: 02 + 08 + 16 = 26
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 8</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-8')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-8" class="gabarito-box">
+            Resposta: a
+        </div>
+
+        <div class="q-text">Numa expansão isobárica (pressão constante), o trabalho realizado por um gás é tanto maior quanto:
+
+a) maior a pressão e maior a variação de volume;
+b) menor a pressão e maior a variação de volume;
+c) maior a pressão e maior o volume;
+d) menor a pressão e menor o volume;
+e) maior a pressão e menor o volume.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-8')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-8" class="resolucao-box">
+                O trabalho em uma transformação isobárica é dado pela fórmula:
+W = p · ΔV
+Portanto, quanto maior for a pressão (p) e maior for a variação de volume (ΔV), maior será o trabalho (W) realizado.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 9</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-9')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-9" class="gabarito-box">
+            Resposta: Soma = 37
+        </div>
+
+        <div class="q-text">Analise as proposições dadas a seguir e dê como resposta o somatório dos números que correspondem às afirmativas corretas:
+
+(01) A energia interna de dada massa de gás é função exclusiva de sua temperatura.
+(02) Numa expansão isobárica, a quantidade de calor recebida é menor que o trabalho realizado.
+(04) Numa transformação isocórica, a variação de energia interna do gás é igual à quantidade de calor trocada com o meio exterior.
+(08) Numa transformação adiabática, o gás não troca trabalho com o meio externo.
+(16) A energia interna de um sistema gasoso só não varia nas transformações adiabáticas.
+(32) Numa expansão isobárica, a temperatura do gás aumenta.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-9')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-9" class="resolucao-box">
+                • (01) Correta: Para um gás ideal, U depende exclusivamente de T.
+• (02) Incorreta: Na expansão isobárica, Q = ΔU + W. Como ΔU &gt; 0, temos Q &gt; W.
+• (04) Correta: Isocórica (isométrica) significa W = 0, logo ΔU = Q.
+• (08) Incorreta: Na adiabática Q = 0, mas o trabalho W pode ser trocado com o meio.
+• (16) Incorreta: A energia interna não varia nas transformações isotérmicas (onde ΔT = 0).
+• (32) Correta: Na expansão isobárica, V aumenta a p constante, logo V/T = const ⇒ T aumenta.
+
+Soma das corretas: 01 + 04 + 32 = 37
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 10</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-10')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-10" class="gabarito-box">
+            Resposta: Soma = 31
+        </div>
+
+        <div class="q-text">(UEPG) A 1ª lei da termodinâmica pode ser entendida como uma afirmação do princípio da conservação da energia. Sua expressão analítica é dada por ∆U = Q - W, onde ∆U corresponde à variação da energia interna do sistema, Q e W, respectivamente, calor trocado e trabalho realizado. Sobre a 1ª lei da termodinâmica aplicada a transformações abertas, assinale o que for correto.
+
+(01) O sistema pode receber trabalho sem fornecer calor e sua energia interna aumenta.
+(02) O sistema pode receber calor sem realizar trabalho e sua energia interna aumenta.
+(04) O sistema pode, simultaneamente, receber calor e trabalho e sua energia interna aumenta.
+(08) O sistema pode realizar trabalho sem receber calor e sua energia interna diminui.
+(16) O sistema pode fornecer calor sem receber trabalho e sua energia interna diminui.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-10')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-10" class="resolucao-box">
+                Análise das proposições (ΔU = Q - W):
+• (01) Correta: Se W &lt; 0 (recebe trabalho) e Q = 0, ΔU = -(-W) = +W &gt; 0.
+• (02) Correta: Se Q &gt; 0 e W = 0, ΔU = Q &gt; 0.
+• (04) Correta: Se Q &gt; 0 e W &lt; 0, ΔU = Q - (-W) = Q + W &gt; 0.
+• (08) Correta: Se W &gt; 0 e Q = 0, ΔU = -W &lt; 0.
+• (16) Correta: Se Q &lt; 0 e W = 0, ΔU = Q &lt; 0.
+
+Todas estão corretas: 01 + 02 + 04 + 08 + 16 = 31
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 11</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-11')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-11" class="gabarito-box">
+            Resposta: 3,0 J
+        </div>
+
+        <div class="q-text">Um gás perfeito sofre uma expansão isobárica, sob pressão de 5,0 N/m². Seu volume aumenta de 0,20 m³ para 0,60 m³. Qual foi a variação de energia interna do gás se, durante a expansão, ele recebeu 5,0 J de calor do ambiente?</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-11')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-11" class="resolucao-box">
+                1. Cálculo do trabalho:
+W = p · ΔV = 5,0 · (0,60 - 0,20) = 5,0 · 0,40 = 2,0 J
+
+2. Variação da energia interna (1ª Lei):
+ΔU = Q - W = 5,0 - 2,0 = 3,0 J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 12</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-12')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-12" class="gabarito-box">
+            Resposta: 150 J
+        </div>
+
+        <div class="q-text">Um sistema gasoso ideal sofre uma transformação isobárica de pressão igual a 5 · 10⁴ N/m². Seu volume evolui de 3 L para 6 L. Determine o trabalho trocado com o meio externo.
+Dado: 1 L = 1 dm³ = 10⁻³ m³</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-12')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-12" class="resolucao-box">
+                Variação de volume:
+ΔV = 6 L - 3 L = 3 L = 3 · 10⁻³ m³
+
+Trabalho realizado:
+W = p · ΔV = (5 · 10⁴ N/m²) · (3 · 10⁻³ m³) = 15 · 10¹ = 150 J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 13</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-13')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-13" class="gabarito-box">
+            Resposta: a) 627 J; b) -627 J; c) 0 J
+        </div>
+
+        <div class="q-text">Um sistema gasoso ideal troca (recebe ou cede) com o meio externo 150 cal em forma de calor. Determine, em joules, o trabalho trocado com o meio, em cada um dos casos:
+a) expansão isotérmica;
+b) compressão isotérmica;
+c) aquecimento isométrico.
+Dado: 1 cal = 4,18 J</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-13')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-13" class="resolucao-box">
+                Conversão do calor: |Q| = 150 cal × 4,18 J/cal = 627 J
+
+a) Expansão isotérmica: Na isotérmica, ΔU = 0, logo W = Q. Como é expansão e recebe calor, W = +627 J.
+b) Compressão isotérmica: Como é compressão, o gás cede calor e recebe trabalho: W = -627 J.
+c) Aquecimento isométrico: Em transformação isométrica (volume constante), o trabalho é nulo: W = 0 J.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 14</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-14')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-14" class="gabarito-box">
+            Resposta: a) 400 cal; b) -400 cal; c) 0 cal
+        </div>
+
+        <div class="q-text">Um sistema termodinâmico, constituído por um gás perfeito, troca 400 cal de calor com o meio externo. Determine a variação de energia interna do sistema, em cada um dos casos:
+a) aquecimento isocórico;
+b) resfriamento isométrico;
+c) expansão isotérmica.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-14')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-14" class="resolucao-box">
+                a) Aquecimento isocórico (W = 0, recebe Q = +400 cal):
+ΔU = Q = 400 cal
+
+b) Resfriamento isométrico (W = 0, cede Q = -400 cal):
+ΔU = Q = -400 cal
+
+c) Expansão isotérmica (ΔT = 0):
+Como U depende de T, a variação da energia interna é nula: ΔU = 0 cal.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 15</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-15')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-15" class="gabarito-box">
+            Resposta: a) 50 cal; b) -50 cal; c) 0 cal
+        </div>
+
+        <div class="q-text">Numa transformação termodinâmica, um gás ideal troca com o meio externo 209 J em forma de trabalho. Determine, em calorias, o calor que o sistema troca com o meio externo, em cada um dos casos (Dado: 1 cal = 4,18 J):
+a) expansão isotérmica;
+b) compressão isotérmica;
+c) expansão adiabática.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-15')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-15" class="resolucao-box">
+                Trabalho em calorias: |W| = 209 / 4,18 = 50 cal
+
+a) Expansão isotérmica (ΔU = 0, W = +50 cal):
+Q = W = 50 cal
+
+b) Compressão isotérmica (ΔU = 0, W = -50 cal):
+Q = W = -50 cal (cede 50 cal)
+
+c) Expansão adiabática:
+Por definição de transformação adiabática, não há troca de calor: Q = 0 cal.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 16</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-16')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-16" class="gabarito-box">
+            Resposta: e
+        </div>
+
+        <div class="q-text">Leia com atenção e identifique a alternativa correta.
+a) Numa compressão isotérmica de um gás perfeito, o sistema não troca calor com o meio externo.
+b) Numa compressão isotérmica de um gás perfeito, o sistema cede um valor de calor menor que o valor do trabalho que recebe.
+c) Numa compressão isotérmica de um gás perfeito, sempre ocorre variação da energia interna do gás.
+d) Numa compressão isotérmica de um gás perfeito, o sistema realiza trabalho; portanto, não recebe calor.
+e) Numa compressão isotérmica de um gás perfeito, o sistema recebe trabalho, que é integralmente transformado em calor.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-16')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-16" class="resolucao-box">
+                Em uma compressão isotérmica, a temperatura não muda (ΔU = 0). O sistema recebe trabalho (W &lt; 0) e, pela 1ª Lei (ΔU = Q - W ⇒ 0 = Q - W ⇒ Q = W), todo o trabalho recebido é cediço/transformado integralmente em calor para o meio externo.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 17</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-17')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-17" class="gabarito-box">
+            Resposta: c
+        </div>
+
+        <div class="q-text">Um estudante manuseava uma bomba manual (metálica) de encher bola de futebol. Mantendo o orifício de saída do ar tapado com seu dedo, ele comprimia rapidamente o êmbolo e observava que o ar dentro da bomba era aquecido. Das afirmativas a seguir, qual você usaria para explicar o fenômeno descrito?
+
+a) Quando se comprime um gás, sua temperatura sempre aumenta.
+b) Quando se comprime rapidamente um gás, facilita-se a troca de calor entre o ar que está dentro da bomba e o meio externo.
+c) Devido à rapidez da compressão, o ar que está dentro da bomba não troca calor com o meio externo; assim, o trabalho realizado provoca aumento da energia interna desse ar.
+d) A compressão rápida do ar foi feita isobaricamente, provocando aumento na velocidade de suas partículas.
+e) O fenômeno descrito é impossível de ocorrer, pois, sendo o corpo da bomba metálico, qualquer energia que seja fornecida para o ar interno será imediatamente transferida para o meio externo.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-17')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-17" class="resolucao-box">
+                Por ser uma compressão muito rápida, não há tempo hábil para haver troca significativa de calor com o ambiente (processo adiabático, Q ≈ 0). O trabalho mecânico realizado ao comprimir o êmbolo (W &lt; 0) aumenta diretamente a energia interna (ΔU = -W &gt; 0), aquecendo o ar.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 18</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-18')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-18" class="gabarito-box">
+            Resposta: a) V = 7,0 · 10⁻³ T [L]; b) 7,5 L
+        </div>
+
+        <div class="q-text">(Vunesp-FMJ) Inicialmente, um gás ideal ocupava o volume de 3,5 litros enquanto sua temperatura e pressão eram, respectivamente, 400 K e 2,0.10⁵ Pa.
+
+a) Determine a relação entre o volume e a temperatura para que a pressão desse gás passe a ser mantida em 2,5.10⁵ Pa.
+b) Suponha que, a partir das condições iniciais, o gás receba calor de uma fonte térmica, realizando sobre o meio um trabalho de 800 J. Nessas condições, sabendo-se que a transformação sofrida pelo gás foi isobárica, determine seu novo volume.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-18')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-18" class="resolucao-box">
+                a) Usando a equação geral dos gases ideais:
+(p₁ · V₁) / T₁ = (p₂ · V₂) / T₂
+(2,0 · 10⁵ · 3,5) / 400 = (2,5 · 10⁵ · V) / T
+7,0 · 10⁵ / 400 = 2,5 · 10⁵ · (V / T)
+1750 = 2,5 · 10⁵ · (V / T)
+V / T = 1750 / (2,5 · 10⁵) = 7,0 · 10⁻³ L/K
+Logo, V = 7,0 · 10⁻³ · T (com V em litros e T em Kelvin).
+
+b) Na transformação isobárica a partir das condições iniciais (p = 2,0 · 10⁵ Pa, V₁ = 3,5 L = 3,5 · 10⁻³ m³):
+W = p · ΔV ⇒ 800 = 2,0 · 10⁵ · (V₂ - 3,5 · 10⁻³)
+ΔV = 800 / (2,0 · 10⁵) = 4,0 · 10⁻³ m³ = 4,0 L
+V₂ = V₁ + ΔV = 3,5 L + 4,0 L = 7,5 L
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 19</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-19')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-19" class="gabarito-box">
+            Resposta: 200 cal (ou 836 J)
+        </div>
+
+        <div class="q-text">Um gás perfeito sofre uma expansão isobárica, trocando com o meio externo 500 cal em forma de calor e 300 cal em forma de trabalho. Determine a variação da energia interna do sistema.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-19')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-19" class="resolucao-box">
+                Dados:
+• Q = +500 cal (calor recebido)
+• W = +300 cal (trabalho realizado)
+
+Aplicando a 1ª Lei da Termodinâmica:
+ΔU = Q - W
+ΔU = 500 - 300 = 200 cal
+
+Em joules (1 cal ≈ 4,18 J):
+ΔU = 200 · 4,18 = 836 J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 20</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-20')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-20" class="gabarito-box">
+            Resposta: Soma = 07
+        </div>
+
+        <div class="q-text">(UFBA - Adaptada) Para aquecer lentamente o gás contido em um recipiente provido de êmbolo móvel, a uma taxa de calor constante, utiliza-se o sistema de banho-maria, conforme a figura do enunciado.
+Considerando-se que os pesos são mantidos sobre o êmbolo, o gás, ao expandir-se:
+
+(01) desloca o êmbolo com velocidade constante.
+(02) sofre acréscimo de energia interna.
+(04) mantém sua pressão constante.
+(08) tem seu estado termodinâmico descrito exclusivamente pela temperatura.
+(16) converte integralmente em trabalho o calor recebido da fonte térmica.
+
+Dê como resposta a soma dos números associados às afirmações corretas.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-20')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-20" class="resolucao-box">
+                • (01) Correta: O aquecimento lento faz o gás expandir quasostaticamente sob forças em equilíbrio, deslocando o êmbolo com velocidade constante.
+• (02) Correta: Na expansão isobárica de um gás ideal, o aumento de volume implica aumento de temperatura e portanto de energia interna (ΔU &gt; 0).
+• (04) Correta: Como a massa dos pesos sobre o êmbolo e a pressão atmosférica são constantes, a pressão do gás permanece constante.
+• (08) Incorreta: O estado termodinâmico precisa de três variáveis de estado (p, V, T).
+• (16) Incorreta: Parte do calor vira energia interna e parte vira trabalho (Q = ΔU + W).
+
+Soma das corretas: 01 + 02 + 04 = 07
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 21</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-21')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-21" class="gabarito-box">
+            Resposta: Soma = 12
+        </div>
+
+        <div class="q-text">(UFMS) Um cilindro, fechado por um êmbolo, encerra o volume de 1,0 · 10⁻² m³ de um gás ideal à pressão de 2,0 · 10⁵ Pa. O sistema recebe de uma fonte quente 5,0 · 10³ J de calor. O êmbolo desloca-se de modo que o volume do gás seja duplicado num processo isobárico. Ao final do processo, pode-se afirmar que:
+
+(01) não houve qualquer variação da energia interna do sistema.
+(02) o calor fornecido pela fonte quente foi totalmente armazenado sob a forma de energia interna do sistema.
+(04) o trabalho realizado pelo sistema sobre o meio foi de 2,0 · 10³ J.
+(08) o aumento da energia interna do sistema foi de 3,0 · 10³ J.
+(16) o calor fornecido pela fonte quente foi totalmente transformado em trabalho realizado pelo sistema sobre o meio.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-21')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-21" class="resolucao-box">
+                Cálculos:
+• V₁ = 1,0 · 10⁻² m³
+• V₂ = 2,0 · 10⁻² m³ (volume duplicou)
+• ΔV = 1,0 · 10⁻² m³
+• p = 2,0 · 10⁵ Pa
+
+1. Trabalho (W):
+W = p · ΔV = 2,0 · 10⁵ · 1,0 · 10⁻² = 2,0 · 10³ J (Afirmação 04 CORRETA)
+
+2. Variação de energia interna (ΔU):
+ΔU = Q - W = 5,0 · 10³ - 2,0 · 10³ = 3,0 · 10³ J (Afirmação 08 CORRETA)
+
+Soma das afirmativas corretas: 04 + 08 = 12
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 22</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-22')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-22" class="gabarito-box">
+            Resposta: a) 0 J; b) 3,2 · 10² J; c) 3,2 · 10² J; d) 1,6 · 10² J
+        </div>
+
+        <div class="q-text">Na universidade, no interior de um laboratório de Física, um instrutor realizou um experimento: aprisionou determinada massa de um gás monoatômico ideal num recipiente de êmbolo móvel. Com uma fonte térmica provocou uma transformação em duas etapas: uma isobárica seguida de uma isométrica. No estado inicial: p₁ = 8,0 · 10² N/m² e V₁ = 0,40 m³. No final: p₂ = 4,0 · 10² N/m² e V₂ = 0,80 m³. Determine:
+a) a variação de energia interna do gás.
+b) o trabalho realizado pelo gás nesta transformação.
+c) a quantidade de calor trocada pelo gás com a fonte térmica externa.
+d) Se a transformação isométrica ocorrer antes da isobárica, mantendo os mesmos estados inicial e final, qual é o novo trabalho realizado pelo gás?</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-22')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-22" class="resolucao-box">
+                a) Para um gás monoatômico, U = (3/2) p·V.
+U_inicial = 1,5 · (8,0 · 10² · 0,40) = 480 J
+U_final = 1,5 · (4,0 · 10² · 0,80) = 480 J
+ΔU = U_final - U_inicial = 0 J.
+
+b) Na sequência Isobárica (p = 8,0 · 10², V de 0,40 a 0,80) e Isométrica (V = 0,80, p de 8,0 · 10² a 4,0 · 10²):
+W = W_isobárica + W_isométrica = 8,0 · 10² · (0,80 - 0,40) + 0 = 320 J = 3,2 · 10² J.
+
+c) Pela 1ª Lei:
+Q = ΔU + W = 0 + 3,2 · 10² = 3,2 · 10² J.
+
+d) Se a isométrica vem antes (V fica em 0,40 m³ enquanto p cai de 8,0 · 10² para 4,0 · 10²) e depois a isobárica (p = 4,0 · 10² de V = 0,40 para 0,80):
+W&#x27; = 0 + 4,0 · 10² · (0,80 - 0,40) = 160 J = 1,6 · 10² J.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 23</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-23')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-23" class="gabarito-box">
+            Resposta: a) 415 J; b) 10 K (ou 10 °C)
+        </div>
+
+        <div class="q-text">(Unesp-SP) Um pistão com êmbolo móvel contém 2 mol de O₂ e recebe 581 J de calor. O gás sofre uma expansão isobárica na qual seu volume aumentou de 1,66 L, a uma pressão constante de 10⁵ N/m². Considerando R = 8,3 J/mol·K, calcule:
+a) a variação de energia interna do gás;
+b) a variação de temperatura do gás.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-23')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-23" class="resolucao-box">
+                a) Cálculo do trabalho:
+ΔV = 1,66 L = 1,66 · 10⁻³ m³
+W = p · ΔV = 10⁵ · (1,66 · 10⁻³ ) = 166 J
+
+Pela 1ª Lei:
+ΔU = Q - W = 581 - 166 = 415 J
+
+b) Pela equação dos gases ideais (p · ΔV = n · R · ΔT):
+166 = 2 · 8,3 · ΔT
+166 = 16,6 · ΔT ⇒ ΔT = 10 K (ou 10 °C)
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 24</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-24')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-24" class="gabarito-box">
+            Resposta: a) 0 J; b) 3 J; c) 3 J
+        </div>
+
+        <div class="q-text">Um gás perfeito passa do estado A para os estados B e C (no gráfico p×V: A em (0,1; 10), B em (0,1; 30), C em (0,2; 30)). Determine o trabalho realizado pelo gás, em joules, nas transformações:
+a) A para B;
+b) B para C;
+c) ABC.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-24')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-24" class="resolucao-box">
+                a) A → B é uma transformação isométrica (volume constante V = 0,1 m³).
+Logo, W_AB = 0 J.
+
+b) B → C é uma transformação isobárica com p = 30 N/m² e volume variando de 0,1 m³ a 0,2 m³:
+W_BC = p · ΔV = 30 · (0,2 - 0,1) = 30 · 0,1 = 3 J.
+
+c) Na transformação completa A → B → C:
+W_ABC = W_AB + W_BC = 0 + 3 = 3 J.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 25</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-25')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-25" class="gabarito-box">
+            Resposta: a) 1200 J; b) 0 J; c) 1200 J
+        </div>
+
+        <div class="q-text">Um gás perfeito sofre a transformação ABC (A em (2, 400), B em (6, 200), C em (6, 400)). Determine o trabalho do sistema nas transformações:
+a) A para B;
+b) B para C;
+c) ABC.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-25')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-25" class="resolucao-box">
+                a) A → B: O trabalho é numericamente igual à área do trapézio sob o trecho AB no gráfico p×V:
+Base maior = 400 N/m², Base menor = 200 N/m², Altura = (6 - 2) = 4 m³.
+W_AB = [(400 + 200) · 4] / 2 = 600 · 2 = 1200 J.
+
+b) B → C é isométrica (V = 6 m³ constante):
+W_BC = 0 J.
+
+c) W_ABC = W_AB + W_BC = 1200 + 0 = 1200 J.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 26</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-26')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-26" class="gabarito-box">
+            Resposta: 1800 J
+        </div>
+
+        <div class="q-text">No processo isobárico indicado no gráfico (p = 30 Pa, V variando de 20 m³ para 60 m³), um gás perfeito recebeu 3.000 J de energia do ambiente. Que variação ocorreu na energia interna desse gás?</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-26')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-26" class="resolucao-box">
+                1. Cálculo do trabalho na transformação isobárica:
+W = p · ΔV = 30 · (60 - 20) = 30 · 40 = 1200 J
+
+2. Variação de energia interna (1ª Lei):
+ΔU = Q - W = 3000 - 1200 = 1800 J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 27</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-27')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-27" class="gabarito-box">
+            Resposta: a) Realizado, 2200 J; b) Aumentou, 6300 J
+        </div>
+
+        <div class="q-text">Um sistema termodinâmico recebe 8.500 J de calor de uma fonte e sofre a transformação AB (A em (2,0 m³; 300 N/m²), B em (6,0 m³; 800 N/m²)). Responda:
+a) Qual é o trabalho do sistema? É trabalho realizado ou recebido? Justifique.
+b) Qual é a variação de energia interna? A energia interna aumentou ou diminuiu? Justifique.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-27')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-27" class="resolucao-box">
+                a) Trabalho = Área sob a reta AB (trapézio):
+Base maior = 800, Base menor = 300, Altura = (6,0 - 2,0) = 4,0 m³.
+W = [(800 + 300) · 4,0] / 2 = 1100 · 2 = 2200 J.
+É trabalho REALIZADO pelo sistema, pois houve aumento de volume (expansão, ΔV &gt; 0).
+
+b) ΔU = Q - W = 8500 - 2200 = 6300 J.
+A energia interna AUMENTOU, pois ΔU &gt; 0.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 28</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-28')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-28" class="gabarito-box">
+            Resposta: 6,0 J
+        </div>
+
+        <div class="q-text">Uma amostra de gás perfeito sofre transformação indicada no gráfico (A em (1,0 L; 6,0·10⁵ N/m²), B em (5,0 L; 2,0·10⁵ N/m²)). O gás recebeu 22,0 J de calor. Estabeleça a variação de energia interna dessa amostra.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-28')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-28" class="resolucao-box">
+                1. Cálculo do trabalho (área do trapézio no gráfico p×V):
+V₁ = 1,0 L = 1,0 · 10⁻³ m³
+V₂ = 5,0 L = 5,0 · 10⁻³ m³
+ΔV = 4,0 · 10⁻³ m³
+
+W = [(6,0 · 10⁵ + 2,0 · 10⁵) / 2] · (4,0 · 10⁻³)
+W = (4,0 · 10⁵) · (4,0 · 10⁻³) = 16,0 J
+
+2. Variação da energia interna:
+ΔU = Q - W = 22,0 - 16,0 = 6,0 J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 29</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-29')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-29" class="gabarito-box">
+            Resposta: 2,5 · 10³ J
+        </div>
+
+        <div class="q-text">(PUC-MG) A transformação cíclica representada no diagrama (trapezóide no sentido horário: V de 5 L a 20 L, p entre 2·10⁵ e 4·10⁵ N/m²). Qual o trabalho realizado por esse gás em cada ciclo em joules?</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-29')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-29" class="resolucao-box">
+                O trabalho num ciclo é numericamente igual à área interna da figura no gráfico p×V.
+A figura é um trapézio com:
+• Base maior = 20 - 5 = 15 L = 15 · 10⁻³ m³
+• Base menor = 20 - 10 = 10 L = 10 · 10⁻³ m³
+• Altura = (4 - 2) · 10⁵ = 2 · 10⁵ N/m²
+
+W = [(15 + 10) · 10⁻³ · 2 · 10⁵] / 2 = 25 · 10² = 2500 J = 2,5 · 10³ J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 30</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-30')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-30" class="gabarito-box">
+            Resposta: a) 8 J; b) Máxima em C, Mínima em A
+        </div>
+
+        <div class="q-text">Um gás perfeito desenvolve o ciclo retangular ABCDA no sentido horário (A(1,2), B(1,6), C(3,6), D(3,2)). Determine:
+a) o trabalho, em joules, realizado pelo gás no ciclo ABCDA;
+b) o ponto do ciclo em que a energia interna do sistema é máxima e o ponto onde é mínima.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-30')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-30" class="resolucao-box">
+                a) O trabalho no ciclo é a área do retângulo ABCDA:
+Lado ΔV = 3 - 1 = 2 m³
+Lado Δp = 6 - 2 = 4 N/m²
+W = 2 · 4 = 8 J (positivo pois o ciclo está no sentido horário).
+
+b) Para um gás ideal, a energia interna U é proporcional ao produto p·V:
+• Em A: p·V = 2 · 1 = 2 (MÍNIMA)
+• Em B: p·V = 6 · 1 = 6
+• Em C: p·V = 6 · 3 = 18 (MÁXIMA)
+• Em D: p·V = 2 · 3 = 6
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 31</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-31')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-31" class="gabarito-box">
+            Resposta: 20 W
+        </div>
+
+        <div class="q-text">Um sistema realiza a cada segundo 100 ciclos ABCDA iguais ao do gráfico (retângulo no sentido horário: p de 1,0·10⁴ a 2,0·10⁴ Pa; V de 1,0 cm³ a 3,0 cm³). Qual a potência desse sistema em watts?</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-31')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-31" class="resolucao-box">
+                1. Trabalho em 1 ciclo (Área do retângulo):
+Δp = (2,0 - 1,0) · 10⁴ Pa = 1,0 · 10⁴ Pa
+ΔV = (3,0 - 1,0) cm³ = 2,0 cm³ = 2,0 · 10⁻⁶ m³
+W_ciclo = 1,0 · 10⁴ · 2,0 · 10⁻⁶ = 0,2 J
+
+2. Trabalho total por segundo (frequência = 100 Hz):
+W_total = 100 · 0,2 J = 20 J
+
+3. Potência:
+P = W_total / Δt = 20 J / 1 s = 20 W
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 32</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-32')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-32" class="gabarito-box">
+            Resposta: c
+        </div>
+
+        <div class="q-text">(Unip-SP) O gráfico representa a pressão em função do volume para 1 mol de um gás perfeito indo de A (b, 4a) para B (4b, a). Indique a opção correta:
+a) A transformação indicada é isotérmica.
+b) A área assinalada na figura mede a variação de energia interna do gás.
+c) Na transformação de A para B o gás recebe um calor Q, realiza um trabalho W, de modo que |Q| = |W|.
+d) A transformação de A para B é adiabática porque não houve acréscimo de energia interna do gás.
+e) A área assinalada na figura não pode ser usada para se medir o calor recebido pelo gás.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-32')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-32" class="resolucao-box">
+                • Ponto A: p_A · V_A = 4a · b = 4ab
+• Ponto B: p_B · V_B = a · 4b = 4ab
+Como p_A · V_A = p_B · V_B, as temperaturas inicial e final são iguais (T_A = T_B), logo ΔU = 0.
+Pela 1ª Lei: ΔU = Q - W ⇒ 0 = Q - W ⇒ Q = W (ou |Q| = |W|).
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 33</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-33')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-33" class="gabarito-box">
+            Resposta: a) T_D = T; b) ΔU_AD = 0 J; c) -1
+        </div>
+
+        <div class="q-text">Um gás perfeito monoatômico sofre as transformações: AB (isobárica a p, V de V a 2V), BC (expansão com queda de p a p/2 e V a 4V) e CD (isobárica a p/2 de 4V a 2V).
+a) Sendo T a temperatura em A, qual a temperatura em D?
+b) Qual a variação de energia interna de A para D?
+c) Qual a razão entre os trabalhos nas transformações AB e CD?</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-33')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-33" class="resolucao-box">
+                a) Ponto A: p_A = p, V_A = V ⇒ p·V = nRT.
+Ponto D: p_D = p/2, V_D = 2V ⇒ (p/2)·(2V) = p·V = nRT_D.
+Como o produto p·V é igual nos pontos A e D, T_D = T.
+
+b) Como T_A = T_D, a variação da energia interna no processo AD é nula: ΔU_AD = 0 J.
+
+c) W_AB = p · (2V - V) = pV
+W_CD = (p/2) · (2V - 4V) = (p/2) · (-2V) = -pV
+Razão: W_AB / W_CD = (pV) / (-pV) = -1
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 34</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-34')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-34" class="gabarito-box">
+            Resposta: a) W_AB = 0 J, W_BC = 300 J, W_CD = 250 J; b) 675 J; c) 27 °C
+        </div>
+
+        <div class="q-text">Um sistema gasoso ideal, ao receber 293 cal (1 cal = 4,18 J), evolui de A a D (A(0,1; 0,5·10⁵) → B(0,1; 1,5·10⁵) → C(0,3; 1,5·10⁵) → D(0,5; 1,0·10⁵)).
+Determine:
+a) o trabalho em cada transformação: AB, BC e CD;
+b) a variação de energia interna em ABCD;
+c) a temperatura do gás no ponto D, sabendo que no ponto C era -3 °C.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-34')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-34" class="resolucao-box">
+                a) • AB: Isométrica (ΔV = 0) ⇒ W_AB = 0 J
+• BC: Isobárica (p = 1,5·10⁵ Pa, ΔV = 0,3 - 0,1 = 0,2 m³) ⇒ W_BC = 1,5·10⁵ · 0,2 = 300 J
+• CD: Trapézio sob o gráfico ⇒ W_CD = [(1,5·10⁵ + 1,0·10⁵)/2] · (0,5 - 0,3) = 1,25·10⁵ · 0,2 = 250 J
+
+b) W_total = 0 + 300 + 250 = 550 J
+Q = 293 cal × 4,18 J/cal = 1224,74 J ≈ 1225 J
+ΔU = Q - W = 1225 - 550 = 675 J
+
+c) T_C = -3 + 273 = 270 K
+(p_C · V_C) / T_C = (p_D · V_D) / T_D
+(1,5·10⁵ · 0,3) / 270 = (1,0·10⁵ · 0,5) / T_D
+450 / 270 = 500 / T_D ⇒ 1,6667 = 500 / T_D ⇒ T_D = 300 K = 27 °C
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 35</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-35')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-35" class="gabarito-box">
+            Resposta: a) 10 mols; b) 24,9 · 10³ J; c) 37,4 · 10³ J
+        </div>
+
+        <div class="q-text">O gráfico V × T mostra processo isobárico (p = 1,0 · 10⁶ N/m², R = 8,3 J/mol·K) do ponto A (100 K, 8,3 L) ao B (400 K, V_B).
+a) O número de mols do gás.
+b) O trabalho realizado pelo gás no processo AB.
+c) A variação de energia interna do gás no processo AB.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-35')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-35" class="resolucao-box">
+                a) No estado A: p = 1,0 · 10⁶ N/m², V_A = 8,3 L = 8,3 · 10⁻³ m³, T_A = 100 K.
+p · V = n · R · T ⇒ 1,0 · 10⁶ · 8,3 · 10⁻³ = n · 8,3 · 100
+8300 = n · 830 ⇒ n = 10 mols
+
+b) Em transformação isobárica: W = n · R · ΔT
+W = 10 · 8,3 · (400 - 100) = 83 · 300 = 24.900 J = 24,9 · 10³ J
+
+c) Para gás monoatômico: ΔU = (3/2) n · R · ΔT
+ΔU = 1,5 · 24.900 = 37.350 J ≈ 37,4 · 10³ J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 36</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-36')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-36" class="gabarito-box">
+            Resposta: a) 250 J; b) 500 W; c) Máxima no ponto médio de BC (1,5 atm; 7,5 L), Mínima em A (1 atm; 5 L)
+        </div>
+
+        <div class="q-text">Um gás ideal desenvolve o ciclo no gráfico p×V (triângulo A(5, 1), B(5, 2), C(10, 1) em L e atm).
+Determine:
+a) o trabalho realizado pelo gás em 1 ciclo;
+b) a potência desenvolvida, sabendo que a duração do ciclo é 0,5 s;
+c) o ponto onde a energia interna é máxima e onde é mínima.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-36')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-36" class="resolucao-box">
+                a) W = Área do triângulo ABC:
+Base = 10 - 5 = 5 L = 5 · 10⁻³ m³
+Altura = 2 - 1 = 1 atm = 10⁵ N/m²
+W = (5 · 10⁻³ · 10⁵) / 2 = 500 / 2 = 250 J
+
+b) P = W / t = 250 / 0,5 = 500 W
+
+c) A energia interna U depende de p·V:
+• Em A: 1 · 5 = 5
+• Em B: 2 · 5 = 10
+• Em C: 1 · 10 = 10
+• No ponto médio da reta BC (p = 1,5 atm, V = 7,5 L): p·V = 1,5 · 7,5 = 11,25 (MÁXIMA)
+Mínima ocorre em A (p·V = 5).
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 37</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-37')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-37" class="gabarito-box">
+            Resposta: 26 J
+        </div>
+
+        <div class="q-text">Uma máquina térmica executa o ciclo triangular A(V₀, 2p₀) → B(3V₀, 3p₀) → C(3V₀, p₀) → A. Sabendo que p₀V₀ = 13 J, calcule o trabalho realizado em um ciclo.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-37')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-37" class="resolucao-box">
+                 O trabalho em 1 ciclo é a área do triângulo ABC:
+• Base (segmento BC): de p₀ a 3p₀ ⇒ Δp = 2p₀
+• Altura: de V₀ a 3V₀ ⇒ ΔV = 2V₀
+
+W = (Base · Altura) / 2 = (2p₀ · 2V₀) / 2 = 2 p₀V₀
+
+Como p₀V₀ = 13 J:
+W = 2 · 13 J = 26 J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 38</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-38')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-38" class="gabarito-box">
+            Resposta: a) 0,6 mol; b) 2800 K; c) 3,0 · 10³ J
+        </div>
+
+        <div class="q-text">(UNICAMP-SP) Um gás monoatômico percorre o ciclo abc (triângulo a(0,5 m³; 2,0·10³ N/m²), b(3,5 m³; 4,0·10³ N/m²), c(3,5 m³; 2,0·10³ N/m²)). Dados: T_a = 200 K, R = 8,3 J/mol·K.
+a) a quantidade de matéria (em mol) do gás.
+b) a temperatura do gás no ponto b.
+c) a quantidade de calor fornecida ao gás durante o ciclo.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-38')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-38" class="resolucao-box">
+                a) No ponto a: p_a = 2,0 · 10³ N/m², V_a = 0,5 m³, T_a = 200 K.
+p_a · V_a = n · R · T_a ⇒ 2,0 · 10³ · 0,5 = n · 8,3 · 200
+1000 = 1660 n ⇒ n = 1000 / 1660 ≈ 0,6 mol
+
+b) No ponto b: p_b = 4,0 · 10³ N/m², V_b = 3,5 m³.
+(p_a · V_a) / T_a = (p_b · V_b) / T_b
+1000 / 200 = (4,0 · 10³ · 3,5) / T_b ⇒ 5 = 14.000 / T_b ⇒ T_b = 2800 K
+
+c) Em um ciclo completo, ΔU = 0, logo Q_total = W_ciclo = Área do triângulo:
+W = [(3,5 - 0,5) · (4,0 · 10³ - 2,0 · 10³)] / 2 = (3,0 · 2,0 · 10³) / 2 = 3,0 · 10³ J
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 39</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-39')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-39" class="gabarito-box">
+            Resposta: a
+        </div>
+
+        <div class="q-text">(AFA-RJ) Ciclo retangular ABCDA (A(0,2 L; 2,0·10⁵ Pa), B(0,6 L; 2,0·10⁵ Pa), C(0,6 L; 1,0·10⁵ Pa), D(0,2 L; 1,0·10⁵ Pa)). O sistema realiza 40 ciclos por segundo. É correto afirmar que:
+a) a potência do sistema é de 1.600 W.
+b) o trabalho realizado em cada ciclo é 240 J.
+c) a quantidade de calor trocada pelo gás com o ambiente em cada ciclo é nula.
+d) a temperatura do gás é menor no ponto C.
+e) a temperatura do gás é menor no ponto B.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-39')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-39" class="resolucao-box">
+                • Trabalho em 1 ciclo = Área do retângulo:
+ΔV = 0,6 - 0,2 = 0,4 L = 0,4 · 10⁻³ m³
+Δp = (2,0 - 1,0) · 10⁵ = 1,0 · 10⁵ Pa
+W_ciclo = 1,0 · 10⁵ · 0,4 · 10⁻³ = 40 J.
+
+• Potência (40 ciclos em 1 s):
+P = 40 ciclos × 40 J/ciclo / 1 s = 1600 W.
+
+Portanto, a alternativa (a) está correta.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="question-card">
+        <div class="card-top">
+            <span class="q-number">Questão 40</span>
+            <button class="btn-ans-toggle" onclick="toggleAnswer(this, 'ans-40')">
+                <span style="font-size:0.85rem;">👁️</span> Ver Gabarito
+            </button>
+        </div>
+        
+        <div id="ans-40" class="gabarito-box">
+            Resposta: a
+        </div>
+
+        <div class="q-text">(Unip-SP) Ciclo triangular A(x₁, 4a) → B(4x₁, a) → C(x₁, a). Analise:
+I. Nos estados A e B, a energia interna é a mesma, logo na transformação AB não ocorreu troca de energia.
+II. Em todo o ciclo, a temperatura é mínima no estado C.
+III. Nos estados A e B, a temperatura é a mesma.
+IV. Na transformação BC, a energia interna do gás diminui, cedendo energia ao meio.
+
+Estão corretas apenas:
+a) II, III e IV;
+b) I, II e III;
+c) I e IV;
+d) II e III;
+e) II e IV.</div>
+
+        <div>
+            <button class="btn-res-toggle" onclick="toggleResolucao(this, 'res-40')">
+                <span>📘 Resolução Passo a Passo</span>
+                <span class="arrow-icon">▼</span>
+            </button>
+            <div id="res-40" class="resolucao-box">
+                • Ponto A: p·V = 4a · x₁ = 4ax₁
+• Ponto B: p·V = a · 4x₁ = 4ax₁
+• Ponto C: p·V = a · x₁ = ax₁
+
+I. Incorreta: Embora T_A = T_B (logo U_A = U_B), houve trabalho e troca de calor em AB (Q = W ≠ 0).
+II. Correta: Em C, o produto p·V é mínimo (ax₁), logo T é mínima.
+III. Correta: p_A V_A = p_B V_B ⇒ T_A = T_B.
+IV. Correta: Em BC (isobárica), o volume cai de 4x₁ para x₁, logo T diminui, ΔU &lt; 0 e o gás cede calor ao meio.
+
+Estão corretas apenas II, III e IV (Alternativa a).
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    function toggleAnswer(btn, elementId) {
+        const box = document.getElementById(elementId);
+        if (box.style.display === 'block') {
+            box.style.display = 'none';
+            btn.innerHTML = '<span style="font-size:0.85rem;">👁️</span> Ver Gabarito';
+            btn.classList.remove('active');
+        } else {
+            box.style.display = 'block';
+            btn.innerHTML = '<span style="font-size:0.85rem;">🙈</span> Ocultar Gabarito';
+            btn.classList.add('active');
+        }
+    }
+
+    function toggleResolucao(btn, elementId) {
+        const box = document.getElementById(elementId);
+        const arrow = btn.querySelector('.arrow-icon');
+        if (box.style.display === 'block') {
+            box.style.display = 'none';
+            arrow.textContent = '▼';
+            btn.style.backgroundColor = '#f9fafb';
+        } else {
+            box.style.display = 'block';
+            arrow.textContent = '▲';
+            btn.style.backgroundColor = '#e0f2fe';
+        }
+    }
+</script>
+
+</body>
+</html>
